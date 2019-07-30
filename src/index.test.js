@@ -1,19 +1,19 @@
 import {expect} from "chai";
 import JSDOM from "jsdom";
-import fs from 'fs';
+import fs from "fs";
 
-describe('our firts test', () => {
-  it('should pass', () => {
+describe("our firts test", () => {
+  it("should pass", () => {
     expect(true).to.equal(true)
   });
 });
 
-describe('index.html', () => {
-  it('should say Hello', (done) => {
-    const index = fs.readFileSync('./src/index.html', "utf-8");
+describe("index.html", () => {
+  it("should have h1 that says Users", (done) => {
+    const index = fs.readFileSync("./src/index.html", "utf-8");
     JSDOM.env(index, (err, window) => {
-      const h1 = window.document.getElementsByTagName('h1')[0];
-      expect(h1.innerHTML).to.equal('Hello World!');
+      const h1 = window.document.getElementsByTagName("h1")[0];
+      expect(h1.innerHTML).to.equal("Users");
       done();
       window.close();
     });

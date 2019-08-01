@@ -15,6 +15,7 @@ app.get("/", function(req, res){
   res.sendFile(path.join(__dirname, "../dist/index.html"));
 });
 
+/*
 app.get('/users', function(req, res) {
   // hard coding for simplicity. use instead of using a real database
   res.json([
@@ -23,7 +24,7 @@ app.get('/users', function(req, res) {
     {"id": 3, "firstName": "Tina", "lastName": "Lee", "email": "lee.tina@gmail.com"}
   ]);
 });
-
+*/
 app.listen(port, function(err) {
   if (err) {
     console.log(err);
